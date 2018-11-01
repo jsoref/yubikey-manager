@@ -56,7 +56,7 @@ setup(
     description='Tool for managing your YubiKey configuration.',
     license='BSD 2 clause',
     entry_points={
-        'console_scripts': ['ykman=ykman.cli.__main__:main'],
+        'console_scripts': ['ykman=ykman.cli.__main__:cli'],
     },
     packages=[
         'ykman', 'ykman.native', 'ykman.scancodes', 'ykman.cli'],

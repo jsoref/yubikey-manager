@@ -208,19 +208,15 @@ for cmd in COMMANDS:
     cli.add_command(cmd)
 
 
-def main():
+if __name__ == '__main__':
     try:
         cli(obj={})
     except ValueError as e:
         logger.error('Error', exc_info=e)
         click.echo('Error: ' + str(e))
-        return 1
+        sys.exit(1)
 
     except Cve201715361VulnerableError as err:
         logger.error('Error', exc_info=err)
         click.echo('Error: ' + str(err))
-        return 2
-
-
-if __name__ == '__main__':
-    sys.exit(main())
+        sys.exit(2)
